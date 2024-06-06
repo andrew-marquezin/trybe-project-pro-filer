@@ -3,10 +3,11 @@
 
 def show_deepest_file(context):
     if not context["all_files"]:
-        print("🍌")
         print("No files found")
     else:
-        deepest_file = max(context["all_files"], key=len)
+        deepest_file = max(
+            context["all_files"], key=lambda x: len(x.split("/"))
+        )
         print(f"Deepest file: {deepest_file}")
 
 
